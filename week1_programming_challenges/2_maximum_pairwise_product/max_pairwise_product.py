@@ -1,6 +1,5 @@
 # python3
-import math
-import pickle
+
 import random
 
 def stress_test(n, m):
@@ -18,7 +17,6 @@ def stress_test(n, m):
         else:
             print('Wrong answer: {0}, {1}'.format(result_1, result_2))
 
-
 def max_pairwise_product_naive(numbers):
     n = len(numbers)
     max_product = 0
@@ -30,13 +28,8 @@ def max_pairwise_product_naive(numbers):
 
 def max_pairwise_product(numbers):
     n = len(numbers)
-    #max_product = 0
-    # for first in range(n):
-    #     for second in range(first + 1, n):
-    #         max_product = max(max_product,
-    #                           numbers[first] * numbers[second])
-    index_one = 0
-    index_two = 0
+    index_one, index_two = 0, 0
+
     for i in range(1,n):
         if numbers[i] > numbers[index_one]:
             index_one = i
@@ -50,11 +43,16 @@ def max_pairwise_product(numbers):
 
     return numbers[index_one] * numbers[index_two]
 
+# In nlog(n)
+def max_pairwise_product_compact(numbers):
+    numbers.sort()
+    return numbers[-1] * numbers[-2]
 
 if __name__ == '__main__':
     input_n = int(input())
     input_numbers = [int(x) for x in input().split()]
     print(max_pairwise_product(input_numbers))
+    #print(max_pairwise_product_compact(input_numbers))
     #print(max_pairwise_product_naive(input_numbers))
     #stress_test(10, 10000)
     # 

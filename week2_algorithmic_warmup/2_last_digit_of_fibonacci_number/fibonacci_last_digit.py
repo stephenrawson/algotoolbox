@@ -30,3 +30,6 @@ if __name__ == '__main__':
     n = int(input())
     # print(get_fibonacci_last_digit_naive(n))
     print(get_fibonacci_last_digit(n))
+
+
+# (Max time used: 0.28/5.00, max memory used: 13684736/536870912.)

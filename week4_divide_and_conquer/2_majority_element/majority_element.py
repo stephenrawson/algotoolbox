@@ -3,15 +3,15 @@
 import sys
 
 def get_majority_element(a, left, right):
-    a_dict = {}
+    n = {}
     for i in range(len(a)):
-        if str(a[i]) in a_dict:
-            value = a_dict[str(a[i])]
-            a_dict[str(a[i])] = value + 1
+        if str(a[i]) in n:
+            value = n[str(a[i])]
+            n[str(a[i])] = value + 1
         else:
-            a_dict[str(a[i])] = 1
+            n[str(a[i])] = 1
     for i in range(len(a)):
-        if a_dict[str(a[i])] > len(a) // 2:
+        if n[str(a[i])] > len(a) // 2:
             return 1
     return -1
 

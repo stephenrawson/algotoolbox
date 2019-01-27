@@ -1,12 +1,20 @@
-#Uses python3
-
+# Uses python3
+# Good job! (Max time used: 0.03/5.00, max memory used: 9613312/536870912.)
 import sys
 
+def is_greater_or_equal(n,m):
+    return n + m > m + n
+
 def largest_number(a):
-    #write your code here
+    a = sorted(a, reverse=True)
     res = ""
-    for x in a:
-        res += x
+    while  len(a) > 0:
+        maxDigit = '0'
+        for digit in a:
+            if is_greater_or_equal(digit, maxDigit):
+                maxDigit = digit
+        res += maxDigit
+        a.remove(maxDigit)
     return res
 
 if __name__ == '__main__':

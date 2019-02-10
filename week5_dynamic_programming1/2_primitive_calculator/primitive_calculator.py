@@ -1,6 +1,7 @@
 # Uses python3
 import sys
 
+# Good job! (Max time used: 1.14/7.50, max memory used: 13959168/536870912.)
 def optimal_sequence(n):
     sequence = []
     while n >= 1:

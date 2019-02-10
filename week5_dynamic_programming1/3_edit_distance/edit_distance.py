@@ -1,4 +1,5 @@
 # Uses python3
+# Good job! (Max time used: 0.04/5.00, max memory used: 9662464/536870912.)
 def edit_distance(n, m):
 
     d = [[None] * (len(m)+ 1) for i in range(len(n)+1)]
